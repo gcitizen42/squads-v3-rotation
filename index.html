@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Squads Rotation</title><link rel="stylesheet" href="/style.css">
+  <script src="/web3.js" defer></script><script src="/receipt-check.js" defer></script><script src="/app.js?v=custom-rotation-7" defer></script>
+</head>
+<body>
+<main>
+  <p id="boot-status" role="alert">Open <a href="http://127.0.0.1:8774/?v=custom-rotation-7#management">the localhost helper</a> in Brave, not index.html directly.</p>
+  <header><span id="banner" class="status">SOLANA MAINNET / SQUADS V3</span><h1 id="title">Squads Rotation</h1><p id="progress" class="progress">2 of 2 <span aria-hidden="true">&#8594;</span> 2 of 10 <span aria-hidden="true">&#8594;</span> 2 of 8</p><p id="safe-address"></p></header>
+  <section aria-label="Multisig"><h2>1. Configure</h2><label for="multisig-address">Multisig address</label><div class="target-row"><input id="multisig-address" spellcheck="false" autocomplete="off"><button id="load-multisig" type="button">Load Multisig</button></div><p id="membership" role="status"></p></section>
+  <nav hidden role="tablist" aria-label="Test multisig views"><button id="tab-rotation" role="tab" aria-selected="false" aria-controls="rotation-panel" type="button" tabindex="-1">Original Test (Read-only)</button><button id="tab-management" role="tab" aria-selected="true" aria-controls="management-panel" type="button">Multisig Management</button></nav>
+  <section aria-label="Connected wallet">
+    <div class="controls"><button id="connect" type="button">Connect Wallet</button><button id="disconnect" type="button" hidden>Disconnect</button></div>
+    <p id="connected">Not connected</p><p id="wallet-availability" role="status"></p>
+  </section>
+  <section aria-labelledby="step-heading">
+    <div id="rotation-panel" hidden role="tabpanel" aria-labelledby="tab-rotation">
+    <h2 id="step-heading">Next Action</h2>
+    <div class="controls"><button id="add" type="button" disabled>Prepare Add Owners</button><button id="remove" type="button" disabled>Prepare Remove Fixture 2 + Fixture 3</button></div>
+    </div>
+    <div id="management-panel" role="tabpanel" aria-labelledby="tab-management" hidden>
+      <div class="controls"><h2>Current Configuration</h2><button id="management-refresh" type="button">Refresh</button></div>
+      <p id="management-status" role="status">Live state not loaded</p><dl id="management-summary"></dl>
+      <details><summary>Current Owners</summary><ol id="management-owners"></ol></details>
+      <form id="desired-form">
+        <h2>Desired Members And Threshold</h2>
+        <div class="controls"><button id="desired-current" type="button">Use Current Members</button><button id="desired-council" type="button" hidden>Use Council Roster + My Wallets</button></div>
+        <label for="desired-members">Desired members (one public address per line)</label>
+        <textarea id="desired-members" rows="12" spellcheck="false" autocomplete="off" required></textarea>
+        <div class="controls"><label for="desired-threshold">Desired threshold<input id="desired-threshold" type="number" min="1" max="32" value="2" required></label></div>
+        <label id="external-quorum-row" hidden><input id="external-quorum" type="checkbox"> A threshold above two will require other members to approve future proposals. I have confirmed their access.</label>
+        <button id="desired-review" type="submit">Review Rotation</button>
+      </form>
+      <div id="desired-review-panel" hidden><h2>2. Review</h2><dl id="desired-summary"></dl><ol id="desired-changes"></ol><details><summary>Proposed Final Members</summary><ol id="desired-final-members"></ol></details><p id="desired-warning" role="status"></p><div class="controls"><button id="desired-prepare" type="button" disabled>Prepare Submission</button><a id="desired-download" download>Proposal JSON</a></div></div>
+
+    </div>
+    <h2>3. Submit</h2><p id="step" aria-live="polite">Connect your browser wallet to check the next step.</p>
+    <dl id="state"></dl>
+    <p id="notice" class="notice">Threshold stays 2. Your browser wallet and Ledger stay. Any two members can authorize this test vault; no DAO funds or authorities.</p>
+    <div class="consent"><label><input id="ack" type="checkbox"> <span id="ack-label">I will review this transaction in my wallet before approving and sending it.</span></label></div>
+    <button id="submit" class="primary" type="button" disabled>Review And Send In Wallet</button>
+    <p id="approval-gate" role="status">Wallet connection required</p><p id="flow" aria-live="polite">Idle</p><p id="result" role="status"></p>
+    <div class="history-section"><h2>Proposal History</h2><p id="history-scope"></p><div id="management-proposals"></div></div>
+  </section>
+  <section hidden aria-label="Review details">
+    <details><summary>Addresses, exact transaction and local test evidence</summary>
+      <dl id="plan"></dl><h2 id="owners-heading">Your Two Wallets</h2><ol id="owners"></ol>
+      <h2 id="additions-heading">Eight Additions</h2><ol id="committee"></ol><h2 id="removals-heading">Only Two Removals</h2><ol id="removals"></ol>
+      <p id="checks"></p><pre id="preview">No transaction prepared</pre>
+    </details>
+    <details><summary>Submission Receipts</summary><p id="creation-receipt">Synthetic fixture only; no on-chain receipt.</p><ol id="journal"></ol></details>
+  </section>
+</main>
+</body>
+</html>

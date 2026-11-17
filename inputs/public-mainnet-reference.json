@@ -1,0 +1,17 @@
+{
+  "programDataAddress": "Q1xCTDDfdfB4jk2Wicw1HdutFVdRik5LMKYMcZdT2rU",
+  "deploymentSlot": "178977035",
+  "programElfSha256": "757fb8ad1ebce912970d59c2022f1fd0711aa46280e59c37ca8ad56a91e685a2",
+  "rpcSlot": 467670648,
+  "rent": {
+    "data": [
+      "2BMAAAAAAAAAAAAAAADwPzI=",
+      "base64"
+    ],
+    "executable": false,
+    "lamports": 1009200,
+    "owner": "Sysvar1111111111111111111111111111111111111",
+    "rentEpoch": 18446744073709552000,
+    "space": 17
+  }
+}

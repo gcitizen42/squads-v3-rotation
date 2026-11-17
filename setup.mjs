@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import { mkdir, writeFile } from 'node:fs/promises';
+import { spawnSync } from 'node:child_process';
+import { rpc, GENESIS, load, sha, bytes, ROOT } from './sandbox.mjs';
+assert.equal(await rpc('getGenesisHash'), GENESIS);
+const p = await load('outputs/plan.json'), reference = await load('inputs/public-mainnet-reference.json');
+const response = await rpc('getAccountInfo', [reference.programDataAddress, { encoding: 'base64', commitment: 'finalized' }]);
+assert(response.value?.owner === 'BPFLoaderUpgradeab1e11111111111111111111111');
+const data = bytes(response.value); assert.equal(data.readUInt32LE(0), 3);
+const elf = data.subarray(45); assert.equal(sha(elf), p.programElfSha256, 'Deployed program changed. Stop and review before updating the pin.');
+await mkdir(new URL('reference/sources/', ROOT), { recursive: true });
+await writeFile(new URL('reference/sources/squads-mainnet.so', ROOT), elf);
+const result = spawnSync(process.execPath, ['rehearse.mjs'], { cwd: ROOT, stdio: 'inherit' });
+assert.equal(result.status, 0, 'Synthetic rehearsal failed');
+console.log('Setup complete. No wallet opened; no transaction submitted.');

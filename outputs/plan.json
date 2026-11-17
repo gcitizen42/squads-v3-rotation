@@ -1,0 +1,74 @@
+{
+  "label": "SYNTHETIC FIXTURE - NEVER FUND",
+  "chain": "5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d",
+  "program": "SMPLecH534NA9acpos4G6x7uf3LWbCAwZQE9e8ZekMu",
+  "createKey": "Fg3koXh13ajYsb7bpF6cPSPcKpJWqpcrBPLr1LRv44w9",
+  "multisig": "Fy49skTib3JjjhEvYqpJNBV7A9P5ffcHKMYhKBzzs3ES",
+  "vault": "AKTbQZ27evN5ZVCManTaetJ1mK1R8DbjrNQzLeQT2qT8",
+  "owners": [
+    "CqgQWBP92uTRahafsg4urinSgLbMDZEDk31RnzM5LL9M",
+    "G7Eawo4c77kVYJqSAB6rMzv7d2Jy3hQu5X5BitRgcaeP"
+  ],
+  "threshold": 2,
+  "addedOwners": [
+    {
+      "address": "ELxYQDV37xjhFXkNTwSiBHpvWSQjubrqkNYKcNHj4hRX",
+      "name": "Fixture 1"
+    },
+    {
+      "address": "4QtFHzZA38nTUQJEPB8X3wbS2EcSerZriyEtyaNu2SfG",
+      "name": "Fixture 2"
+    },
+    {
+      "address": "9tN2oyakuzvdG57mVrzhG1XmDx3WUpwebsMDAcdVx85q",
+      "name": "Fixture 3"
+    },
+    {
+      "address": "2bMP5zUUjvMnLs5JN637GXtTaRfCYM8DNisPu49h2Kos",
+      "name": "Fixture 4"
+    },
+    {
+      "address": "7Zqtt6yTcdkrJeQwhH5Zog1RnBnFVKBGgzFFHdN5U8UW",
+      "name": "Fixture 5"
+    },
+    {
+      "address": "AMyYVuMQNrKhZt453M8mYvU7iHaL2BQb9AVA4fhCFjy3",
+      "name": "Fixture 6"
+    },
+    {
+      "address": "4Q6d3kju7an5EnXWFzqH5bqjabYHFuB8MGq9gYAPG6AS",
+      "name": "Fixture 7"
+    },
+    {
+      "address": "BmMMWzAKyFpsTrkeFXjATpBkVf5ZkgwNqKpg8YQokfTW",
+      "name": "Fixture 8"
+    }
+  ],
+  "removedOwners": [
+    {
+      "address": "4QtFHzZA38nTUQJEPB8X3wbS2EcSerZriyEtyaNu2SfG",
+      "name": "Fixture 2"
+    },
+    {
+      "address": "9tN2oyakuzvdG57mVrzhG1XmDx3WUpwebsMDAcdVx85q",
+      "name": "Fixture 3"
+    }
+  ],
+  "programElfSha256": "757fb8ad1ebce912970d59c2022f1fd0711aa46280e59c37ca8ad56a91e685a2",
+  "stages": [
+    "2 of 2",
+    "2 of 10",
+    "2 of 8"
+  ],
+  "finalOwners": [
+    "CqgQWBP92uTRahafsg4urinSgLbMDZEDk31RnzM5LL9M",
+    "G7Eawo4c77kVYJqSAB6rMzv7d2Jy3hQu5X5BitRgcaeP",
+    "ELxYQDV37xjhFXkNTwSiBHpvWSQjubrqkNYKcNHj4hRX",
+    "2bMP5zUUjvMnLs5JN637GXtTaRfCYM8DNisPu49h2Kos",
+    "7Zqtt6yTcdkrJeQwhH5Zog1RnBnFVKBGgzFFHdN5U8UW",
+    "AMyYVuMQNrKhZt453M8mYvU7iHaL2BQb9AVA4fhCFjy3",
+    "4Q6d3kju7an5EnXWFzqH5bqjabYHFuB8MGq9gYAPG6AS",
+    "BmMMWzAKyFpsTrkeFXjATpBkVf5ZkgwNqKpg8YQokfTW"
+  ],
+  "planSha256": "53fadc5b152df044d21e05336a778e42439ec50958544a75f7055f9710085937"
+}
